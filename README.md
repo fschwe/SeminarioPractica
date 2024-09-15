@@ -1,2 +1,1 @@
-# SeminarioPractica
- 
+# Seminario de Practica
