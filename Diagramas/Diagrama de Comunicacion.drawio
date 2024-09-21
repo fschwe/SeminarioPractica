@@ -1,10 +1,10 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0" version="24.7.16">
   <diagram name="Página-1" id="IVlexC9TH25bFntbakQO">
-    <mxGraphModel dx="567" dy="623" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="724" dy="797" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="EGMjwr6RVeMJ7AkNr5V9-1" value="Container" style="swimlane;" vertex="1" parent="1">
+        <mxCell id="EGMjwr6RVeMJ7AkNr5V9-1" value="Sucursales" style="swimlane;" vertex="1" parent="1">
           <mxGeometry x="80" y="100" width="150" height="310" as="geometry" />
         </mxCell>
         <mxCell id="EGMjwr6RVeMJ7AkNr5V9-5" value="" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.computer;pointerEvents=1;" vertex="1" parent="EGMjwr6RVeMJ7AkNr5V9-1">
