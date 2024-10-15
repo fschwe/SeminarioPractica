@@ -364,11 +364,4 @@ INSERT INTO `prices` VALUES
     (34,7,7,219.00),
     (35,3,7,986.00);
 
-   SELECT c.name, s.id, a.sku, a.name, p.price FROM
-   surveys s left join  competitors c  on c.id = s.competitors_id 
-   left join prices p on p.surveys_id = s.id
-   left JOIN articles a on a.id = p.articles_id;
-  
-  DELETE FROM prices where surveys_id = 3;
-  DELETE FROM surveys where id=3;
   
