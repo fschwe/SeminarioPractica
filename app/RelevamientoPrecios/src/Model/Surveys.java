@@ -1,5 +1,7 @@
 package Model;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Objects;
 
 public class Surveys {
@@ -7,14 +9,30 @@ public class Surveys {
     private int id;
     private int competitors_id;
     private int users_id;
+    private String created_at;
 
-    public Surveys(int id, int competitors_id, int users_id) {
+    public Surveys(int id, int competitors_id, int users_id, String created_at) {
         this.id = id;
         this.competitors_id = competitors_id;
         this.users_id = users_id;
+        this.created_at = created_at;
+    }
+
+    public Surveys(int competitors_id, int users_id) {
+        this.competitors_id = competitors_id;
+        this.users_id = users_id;
+        this.created_at = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime());
     }
 
     public Surveys() {
+    }
+
+    public String getCreated_at() {
+        return created_at;
+    }
+
+    public void setCreated_at(String created_at) {
+        this.created_at = created_at;
     }
 
     public int getId() {

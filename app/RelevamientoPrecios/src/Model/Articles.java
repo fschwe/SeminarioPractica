@@ -13,7 +13,10 @@ public class Articles {
         this.sku = sku;
     }
 
-    public Articles() {
+    public Articles(String name, String sku) {
+
+        this.name = name;
+        this.sku = sku;
     }
 
     public int getId() {

@@ -5,13 +5,13 @@ import java.util.Objects;
 public class Prices {
     private int id;
     private int articles_id;
-    private int competitors_id;
+    private int surveys_id;
     private double price;
 
-    public Prices(int id, int articles_id, int competitors_id, double price) {
+    public Prices(int id, int articles_id, int surveys_id, double price) {
         this.id = id;
         this.articles_id = articles_id;
-        this.competitors_id = competitors_id;
+        this.surveys_id = surveys_id;
         this.price = price;
 
     }
@@ -35,12 +35,12 @@ public class Prices {
         this.articles_id = articles_id;
     }
 
-    public int getCompetitors_id() {
-        return this.competitors_id;
+    public int getSurveys_id() {
+        return this.surveys_id;
     }
 
-    public void setCompetitors_id(int competitors_id) {
-        this.competitors_id = competitors_id;
+    public void setSurveys_id(int surveys_id) {
+        this.surveys_id = surveys_id;
     }
 
     public double getPrice() {
@@ -61,8 +61,8 @@ public class Prices {
         return this;
     }
 
-    public Prices competitors_id(int competitors_id) {
-        setCompetitors_id(competitors_id);
+    public Prices surveys_id(int surveys_id) {
+        setSurveys_id(surveys_id);
         return this;
     }
 
@@ -79,13 +79,13 @@ public class Prices {
             return false;
         }
         Prices prices = (Prices) o;
-        return id == prices.id && articles_id == prices.articles_id && competitors_id == prices.competitors_id
+        return id == prices.id && articles_id == prices.articles_id && surveys_id == prices.surveys_id
                 && price == prices.price;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, articles_id, competitors_id, price);
+        return Objects.hash(id, articles_id, surveys_id, price);
     }
 
     @Override
@@ -93,7 +93,7 @@ public class Prices {
         return "{" +
                 " id='" + getId() + "'" +
                 ", articles_id='" + getArticles_id() + "'" +
-                ", competitors_id='" + getCompetitors_id() + "'" +
+                ", competitors_id='" + getSurveys_id() + "'" +
                 ", price='" + getPrice() + "'" +
                 "}";
     }

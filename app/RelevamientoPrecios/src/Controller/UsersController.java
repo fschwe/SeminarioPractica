@@ -1,7 +1,5 @@
 package Controller;
 
-import java.io.IOException;
-
 import Model.Users;
 import Services.UsersServices;
 

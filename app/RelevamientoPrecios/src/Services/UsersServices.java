@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import Model.Users;
 
@@ -18,9 +19,12 @@ public class UsersServices extends Conexion {
         try {
             stmt = this.con.createStatement();
             rs = stmt.executeQuery("SELECT * FROM users;");
+            ArrayList<Users> users = new ArrayList<Users>();
             while (rs.next()) {
-                System.out.println(rs.getInt("id") + " " + rs.getString("name") + " " + rs.getString("email") + " "
-                        + rs.getString("password"));
+                users.add(new Users(rs.getInt("id"), rs.getString("username"), rs.getString("password"),
+                        rs.getString("email"), rs.getString("first_name"), rs.getString("last_name"),
+                        rs.getInt("enabled"),
+                        false));
             }
             rs.close();
             stmt.close();
@@ -65,7 +69,7 @@ public class UsersServices extends Conexion {
             pstmt.setInt(6, u.getEnabled());
             pstmt.setInt(7, u.getId());
             pstmt.executeUpdate();
-            System.out.println("Usuario creado correctamente");
+            System.out.println("Usuario modificado correctamente");
             pstmt.close();
             con.close();
         } catch (Exception e) {
@@ -79,7 +83,7 @@ public class UsersServices extends Conexion {
                     "DELETE FROM users WHERE id=?;");
             pstmt.setInt(1, u.getId());
             pstmt.executeUpdate();
-            System.out.println("Usuario creado correctamente");
+            System.out.println("Usuario eliminado correctamente");
             pstmt.close();
             con.close();
         } catch (Exception e) {
