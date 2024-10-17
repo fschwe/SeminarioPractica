@@ -32,6 +32,29 @@ public class SitesServices extends Conexion {
 
     }
 
+    public Sites getSite(String number) {
+        Sites site = null;
+        try {
+            pstmt = con.prepareStatement("SELECT * FROM sites where number=?;");
+            pstmt.setString(1, number);
+            rs = pstmt.executeQuery();
+            while (rs.next()) {
+                site = new Sites(
+                        rs.getInt("id"),
+                        rs.getString("number"),
+                        rs.getString("description"));
+            }
+            rs.close();
+            pstmt.close();
+            con.close();
+            return site;
+        } catch (Exception e) {
+            System.out.println("Error: " + e);
+            return null;
+        }
+
+    }
+
     public void createSite(Sites s) {
         {
             try {

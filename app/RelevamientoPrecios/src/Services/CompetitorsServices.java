@@ -4,8 +4,9 @@ import java.sql.Connection;
 import java.util.ArrayList;
 
 import Model.Competitors;
+import Model.Sites;
 
-public class CompetitorsSerivces extends Conexion {
+public class CompetitorsServices extends Conexion {
 
     private Connection con = getConnection();
 
@@ -27,6 +28,61 @@ public class CompetitorsSerivces extends Conexion {
             }
             rs.close();
             stmt.close();
+            con.close();
+            return competitors;
+        } catch (Exception e) {
+            System.out.println("Error: " + e);
+            return null;
+        }
+
+    }
+
+    public Competitors getCompetitor(int id) {
+        Competitors competitor = null;
+        try {
+            pstmt = con.prepareStatement("SELECT * FROM competitors where id=?;");
+            pstmt.setInt(1, id);
+            rs = pstmt.executeQuery();
+            while (rs.next()) {
+                competitor = new Competitors(
+                        rs.getInt("id"),
+                        rs.getInt("sites_id"),
+                        rs.getInt("brands_id"),
+                        rs.getString("name"),
+                        rs.getString("address"),
+                        rs.getString("latitude"),
+                        rs.getString("longitude"));
+            }
+            rs.close();
+            pstmt.close();
+            con.close();
+            return competitor;
+        } catch (Exception e) {
+            System.out.println("Error: " + e);
+            return null;
+        }
+
+    }
+
+    public ArrayList<Competitors> getCompetitorList(String site) {
+        try {
+            pstmt = con.prepareStatement("SELECT * FROM competitors where sites_id=? ;");
+            pstmt.setString(1, site);
+            rs = pstmt.executeQuery();
+            ArrayList<Competitors> competitors = new ArrayList<Competitors>();
+            while (rs.next()) {
+                competitors.add(
+                        new Competitors(
+                                rs.getInt("id"),
+                                rs.getInt("sites_id"),
+                                rs.getInt("brands_id"),
+                                rs.getString("name"),
+                                rs.getString("address"),
+                                rs.getString("latitude"),
+                                rs.getString("longitude")));
+            }
+            rs.close();
+            pstmt.close();
             con.close();
             return competitors;
         } catch (Exception e) {
