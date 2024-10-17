@@ -1,3 +1,46 @@
+/**
+ * La clase Competitors representa un competidor con atributos como id, sites_id, brands_id, nombre, dirección, latitud y longitud.
+ * 
+ * Proporciona constructores para crear instancias de Competitors, así como métodos getter y setter para acceder y modificar sus atributos.
+ * También incluye métodos para establecer los atributos de manera encadenada, y métodos sobrescritos equals, hashCode y toString.
+ * 
+ * Métodos:
+ * 
+ *   getId() - Obtiene el id del competidor.
+ *   setId(int) - Establece el id del competidor.
+ *   getSites_id() - Obtiene el id del sitio.
+ *   setSites_id(int) - Establece el id del sitio.
+ *   getBrands_id() - Obtiene el id de la marca.
+ *   setBrands_id(int) - Establece el id de la marca.
+ *   getName() - Obtiene el nombre del competidor.
+ *   setName(String) - Establece el nombre del competidor.
+ *   getAddress() - Obtiene la dirección del competidor.
+ *   setAddress(String) - Establece la dirección del competidor.
+ *   getLatitude() - Obtiene la latitud del competidor.
+ *   setLatitude(String) - Establece la latitud del competidor.
+ *   getLongitude() - Obtiene la longitud del competidor.
+ *   setLongitude(String) - Establece la longitud del competidor.
+ *   equals(Object) - Compara este competidor con otro objeto.
+ *   toString() - Devuelve una representación en cadena de este competidor.
+ * 
+ * 
+ * Constructores:
+ * 
+ *   Competitors(int, int, int, String, String, String, String) - Constructor con parámetros para inicializar todos los atributos.
+ *   Competitors() - Constructor por defecto.
+ * 
+ * 
+ * Métodos encadenados:
+ * 
+ *   id(int) - Establece el id del competidor y devuelve la instancia actual.
+ *   sites_id(int) - Establece el id del sitio y devuelve la instancia actual.
+ *   brands_id(int) - Establece el id de la marca y devuelve la instancia actual.
+ *   name(String) - Establece el nombre del competidor y devuelve la instancia actual.
+ *   address(String) - Establece la dirección del competidor y devuelve la instancia actual.
+ *   latitude(String) - Establece la latitud del competidor y devuelve la instancia actual.
+ *   longitude(String) - Establece la longitud del competidor y devuelve la instancia actual.
+ * 
+ */
 package Model;
 
 import java.util.Objects;
@@ -128,11 +171,6 @@ public class Competitors {
         return id == competitors.id && sites_id == competitors.sites_id && brands_id == competitors.brands_id
                 && Objects.equals(name, competitors.name) && Objects.equals(address, competitors.address)
                 && Objects.equals(latitude, competitors.latitude) && Objects.equals(longitude, competitors.longitude);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, sites_id, brands_id, name, address, latitude, longitude);
     }
 
     @Override

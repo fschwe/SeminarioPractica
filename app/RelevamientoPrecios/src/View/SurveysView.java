@@ -1,3 +1,12 @@
+
+/**
+ * La clase SurveysView proporciona la funcionalidad para crear una nueva encuesta.
+ * 
+ * Este método permite a un usuario seleccionar un sitio y un competidor, y luego
+ * ingresar los precios correspondientes.
+ * 
+ * @param user El usuario que está realizando la encuesta.
+ */
 package View;
 
 import Model.Competitors;

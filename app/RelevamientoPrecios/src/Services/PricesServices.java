@@ -1,3 +1,8 @@
+
+/**
+ * Clase PricesServices que extiende de Conexion y proporciona servicios para 
+ * gestionar los precios en la base de datos.
+ */
 package Services;
 
 import java.sql.Connection;
@@ -8,6 +13,11 @@ public class PricesServices extends Conexion {
 
     private Connection con = getConnection();
 
+    /**
+     * Método para obtener todos los precios de la base de datos.
+     * 
+     * @return ArrayList<Prices> Lista de precios obtenidos de la base de datos.
+     */
     public ArrayList<Prices> showPrices() {
         try {
             stmt = con.createStatement();
@@ -32,6 +42,11 @@ public class PricesServices extends Conexion {
 
     }
 
+    /**
+     * Método para crear un nuevo precio en la base de datos.
+     * 
+     * @param p Objeto Prices que contiene los datos del nuevo precio.
+     */
     public void createPrice(Prices p) {
         {
             try {
@@ -53,6 +68,11 @@ public class PricesServices extends Conexion {
         }
     }
 
+    /**
+     * Método para actualizar un precio existente en la base de datos.
+     * 
+     * @param p Objeto Prices que contiene los datos actualizados del precio.
+     */
     public void updatePrice(Prices p) {
         try {
             pstmt = con.prepareStatement(
@@ -70,6 +90,11 @@ public class PricesServices extends Conexion {
         }
     }
 
+    /**
+     * Método para eliminar un precio de la base de datos.
+     * 
+     * @param p Objeto Prices que contiene el ID del precio a eliminar.
+     */
     public void deletePrice(Prices p) {
         try {
             pstmt = con.prepareStatement(

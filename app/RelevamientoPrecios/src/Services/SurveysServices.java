@@ -2,8 +2,6 @@ package Services;
 
 import java.sql.Connection;
 import java.util.ArrayList;
-import java.sql.PreparedStatement;
-import com.mysql.cj.xdevapi.Statement;
 
 import Model.Surveys;
 

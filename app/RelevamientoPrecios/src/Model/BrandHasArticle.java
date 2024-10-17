@@ -1,7 +1,42 @@
 package Model;
 
-import java.util.Objects;
-
+/**
+ * La clase BrandHasArticle representa la relación entre una marca y un
+ * artículo.
+ * Contiene identificadores para la relación, la marca y el artículo.
+ * 
+ * Esta clase proporciona métodos para obtener y establecer los valores de los
+ * identificadores, así como métodos para comparar instancias y generar una
+ * representación en cadena de la instancia.
+ * 
+ * Constructores:
+ * 
+ * BrandHasArticle(int, int, int): Inicializa una nueva instancia con los
+ * valores especificados.
+ * BrandHasArticle(): Inicializa una nueva instancia con valores por defecto.
+ * 
+ * 
+ * Métodos:
+ * 
+ * getId(): Obtiene el identificador de la relación.
+ * setId(int): Establece el identificador de la relación.
+ * getBrands_id(): Obtiene el identificador de la marca.
+ * setBrands_id(int): Establece el identificador de la marca.
+ * getArticles_id(): Obtiene el identificador del artículo.
+ * setArticles_id(int): Establece el identificador del artículo.
+ * id(int): Establece el identificador de la relación y devuelve la instancia
+ * actual.
+ * brands_id(int): Establece el identificador de la marca y devuelve la
+ * instancia actual.
+ * articles_id(int): Establece el identificador del artículo y devuelve la
+ * instancia actual.
+ * equals(Object): Compara esta instancia con otra para determinar si son
+ * iguales.
+ * toString(): Devuelve una representación en cadena de esta instancia.
+ * 
+ *
+ * 
+ */
 public class BrandHasArticle {
 
     private int id;
@@ -66,11 +101,6 @@ public class BrandHasArticle {
         BrandHasArticle brandHasArticle = (BrandHasArticle) o;
         return id == brandHasArticle.id && brands_id == brandHasArticle.brands_id
                 && articles_id == brandHasArticle.articles_id;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, brands_id, articles_id);
     }
 
     @Override

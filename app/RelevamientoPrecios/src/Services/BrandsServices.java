@@ -1,3 +1,29 @@
+
+/**
+ * La clase BrandsServices proporciona servicios para gestionar las marcas en la base de datos.
+ * Extiende la clase Conexion para obtener la conexión a la base de datos.
+ * 
+ * Métodos:
+ * 
+ * - showBrands(): Devuelve una lista de todas las marcas en la base de datos.
+ * - createBrand(Brands b): Crea una nueva marca en la base de datos.
+ * - updateBrand(Brands b): Actualiza una marca existente en la base de datos.
+ * - deleteBrand(Brands b): Elimina una marca de la base de datos.
+ * 
+ * Atributos:
+ * 
+ * - con: Conexión a la base de datos.
+ * 
+ * Excepciones:
+ * 
+ * - En caso de error en la conexión o en la ejecución de las consultas SQL, se captura la excepción y se imprime un mensaje de error.
+ * 
+ * Ejemplo de uso:
+ * 
+ * BrandsServices service = new BrandsServices();
+ * ArrayList<Brands> brands = service.showBrands();
+ * 
+ */
 package Services;
 
 import java.sql.Connection;

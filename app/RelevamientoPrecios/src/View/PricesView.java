@@ -1,3 +1,4 @@
+
 package View;
 
 import Model.Articles;
@@ -11,11 +12,40 @@ import java.util.Scanner;
 
 import Controller.PricesController;
 
+/**
+ * Clase PricesView que maneja la interacción con el usuario para ingresar
+ * precios.
+ * 
+ * Atributos:
+ * - sc: Scanner para la entrada de datos del usuario.
+ * - pricesList: Lista de precios ingresados.
+ * 
+ * Métodos:
+ * 
+ * - inputPrices(Competitors competitor, Users user): Método para ingresar
+ * precios de artículos.
+ * - Parámetros:
+ * - competitor: El competidor para el cual se ingresan los precios.
+ * - user: El usuario que ingresa los precios.
+ * - Funcionalidad:
+ * - Obtiene la lista de artículos asociados a las marcas del competidor.
+ * - Itera sobre la lista de artículos y solicita al usuario ingresar el precio
+ * para cada uno.
+ * - Valida el precio ingresado y lo agrega a la lista de precios.
+ * - Guarda la lista de precios ingresados.
+ * - Muestra un mensaje indicando si el relevamiento se guardó correctamente o
+ * si hubo un error.
+ */
 public class PricesView {
-
     Scanner sc = new Scanner(System.in);
     ArrayList<Prices> pricesList = new ArrayList<Prices>();
 
+    /**
+     * Método para ingresar precios de artículos.
+     * 
+     * @param competitor el competidor para el cual se ingresan los precios.
+     * @param user       el usuario que ingresa los precios.
+     */
     public void inputPrices(Competitors competitor, Users user) {
         ArticlesServices as = new ArticlesServices();
         ArrayList<Articles> articles = as.getBrandsArticle(competitor.getBrands_id());
@@ -48,5 +78,4 @@ public class PricesView {
             System.out.println("Error al guardar el relevamiento");
         }
     }
-
 }

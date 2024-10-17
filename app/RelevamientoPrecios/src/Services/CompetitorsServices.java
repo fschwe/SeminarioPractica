@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.util.ArrayList;
 
 import Model.Competitors;
-import Model.Sites;
 
 public class CompetitorsServices extends Conexion {
 

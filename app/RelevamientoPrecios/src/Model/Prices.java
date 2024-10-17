@@ -1,6 +1,21 @@
+/**
+ * La clase Prices representa un precio asociado a un artículo y una encuesta.
+ * 
+ * Esta clase contiene los siguientes atributos:
+ * 
+ *   id: Identificador único del precio.
+ *   articles_id: Identificador del artículo asociado.
+ *   surveys_id: Identificador de la encuesta asociada.
+ *   price: Valor del precio.
+ * 
+ * 
+ * La clase proporciona constructores para inicializar los atributos, así como
+ * métodos getter y setter para acceder y modificar los valores de los atributos.
+ * También incluye métodos para establecer los valores de los atributos de manera
+ * encadenada, y métodos sobrescritos de equals y toString.
+ * 
+ */
 package Model;
-
-import java.util.Objects;
 
 public class Prices {
     private int id;
@@ -81,11 +96,6 @@ public class Prices {
         Prices prices = (Prices) o;
         return id == prices.id && articles_id == prices.articles_id && surveys_id == prices.surveys_id
                 && price == prices.price;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, articles_id, surveys_id, price);
     }
 
     @Override

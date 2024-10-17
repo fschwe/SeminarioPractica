@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.util.ArrayList;
 
 import Model.Articles;
-import Model.Brands;
 
 public class ArticlesServices extends Conexion {
 
