@@ -8,10 +8,12 @@ import View.SurveysView;
 
 public class Menu {
     private Scanner sc = new Scanner(System.in);
+    private Users user;
 
     public void showMenu() {
+
         System.out.println("1. Nuevo relevamiento");
-        System.out.println("2. Gestion de relevamientos ");
+        System.out.println("2. Gestion de relevamientos - No forma parte del MVP");
         System.out.println("3. Gestion de articulos     - No forma parte del MVP");
         System.out.println("4. Gestion de marcas        - No forma parte del MVP");
         System.out.println("5. Gestion de competidores  - No forma parte del MVP");
@@ -29,26 +31,34 @@ public class Menu {
         username = "99999997";
         password = "password";
         UsersController uc = new UsersController();
-        return uc.login(username, password);
+        user = uc.login(username, password);
+        return user;
 
     }
 
     public void handleMenu(int option) {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
         switch (option) {
             case 1:
                 SurveysView sv = new SurveysView();
-                sv.newSurvey();
+                sv.newSurvey(this.user);
+                System.out.println("hola");
                 break;
             case 2:
+                System.out.println("Funcionalidad no desarrollada, elija otra opcion");
                 break;
             case 3:
-
+                System.out.println("Funcionalidad no desarrollada, elija otra opcion");
                 break;
             case 4:
+                System.out.println("Funcionalidad no desarrollada, elija otra opcion");
                 break;
             case 5:
+                System.out.println("Funcionalidad no desarrollada, elija otra opcion");
                 break;
             case 6:
+                System.out.println("Funcionalidad no desarrollada, elija otra opcion");
                 break;
             case 0:
                 System.out.println("Saliendo...");

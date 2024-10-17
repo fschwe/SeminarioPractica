@@ -2,6 +2,8 @@ package Services;
 
 import java.sql.Connection;
 import java.util.ArrayList;
+import java.sql.PreparedStatement;
+import com.mysql.cj.xdevapi.Statement;
 
 import Model.Surveys;
 
@@ -33,21 +35,29 @@ public class SurveysServices extends Conexion {
 
     }
 
-    public void createSurvey(Surveys s) {
+    public Surveys createSurvey(Surveys s) {
         {
             try {
-
+                String generatedColumns[] = { "id" };
                 pstmt = con.prepareStatement(
-                        "INSERT INTO surveys (competitors_id, user_id, created_at ) VALUES (?,?,?);");
+                        "INSERT INTO surveys (competitors_id, user_id, created_at ) VALUES (?,?,?);", generatedColumns);
                 pstmt.setInt(1, s.getCompetitors_id());
                 pstmt.setInt(2, s.getUsers_id());
                 pstmt.setString(3, s.getCreated_at());
                 pstmt.executeUpdate();
-                System.out.println("Relevamiento creada correctamente");
+                rs = pstmt.getGeneratedKeys();
+                if (rs.next()) {
+                    s.setId(rs.getInt(1));
+                } else {
+                    throw new Exception("Error al crear el relevamiento");
+                }
                 pstmt.close();
+                rs.close();
                 con.close();
+                return s;
             } catch (Exception e) {
                 System.out.println("Error: " + e);
+                return null;
             }
 
         }

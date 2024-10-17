@@ -3,7 +3,6 @@ package View;
 import java.util.Scanner;
 
 import Controller.CompetitorsController;
-import Controller.SitesController;
 import Model.Competitors;
 import Model.Sites;
 import java.util.ArrayList;

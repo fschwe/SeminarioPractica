@@ -42,11 +42,12 @@ public class PricesServices extends Conexion {
                 pstmt.setInt(2, p.getSurveys_id());
                 pstmt.setDouble(3, p.getPrice());
                 pstmt.executeUpdate();
-                System.out.println("Precio creada correctamente");
                 pstmt.close();
                 con.close();
             } catch (Exception e) {
-                System.out.println("Error: " + e);
+
+                System.out.println("Error al guardar el precio del articulo " + p.getArticles_id() + " Causa: " + e);
+
             }
 
         }

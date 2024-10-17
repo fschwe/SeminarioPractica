@@ -82,12 +82,12 @@ public class ArticlesServices extends Conexion {
         }
     }
 
-    public ArrayList<Articles> getBrandsArticle(Brands b) {
+    public ArrayList<Articles> getBrandsArticle(int brand_id) {
         try {
 
             pstmt = con.prepareStatement(
-                    "SELECT  * FROM articles a LEFT JOIN brand_has_articles ba ON a.id=b.articles_id WHERE b.brands_id = ?;");
-            pstmt.setInt(1, b.getId());
+                    "SELECT  * FROM articles a LEFT JOIN brand_has_articles ba ON a.id=ba.articles_id WHERE ba.brands_id = ?;");
+            pstmt.setInt(1, brand_id);
             rs = pstmt.executeQuery();
             ArrayList<Articles> articles = new ArrayList<Articles>();
             while (rs.next()) {

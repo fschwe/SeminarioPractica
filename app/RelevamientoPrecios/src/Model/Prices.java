@@ -93,7 +93,7 @@ public class Prices {
         return "{" +
                 " id='" + getId() + "'" +
                 ", articles_id='" + getArticles_id() + "'" +
-                ", competitors_id='" + getSurveys_id() + "'" +
+                ", user_id='" + getSurveys_id() + "'" +
                 ", price='" + getPrice() + "'" +
                 "}";
     }

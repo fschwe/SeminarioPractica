@@ -66,7 +66,8 @@ public class CompetitorsServices extends Conexion {
 
     public ArrayList<Competitors> getCompetitorList(String site) {
         try {
-            pstmt = con.prepareStatement("SELECT * FROM competitors where sites_id=? ;");
+            pstmt = con.prepareStatement(
+                    "SELECT * FROM competitors where sites_id=(SELECT id FROM sites where number=?);");
             pstmt.setString(1, site);
             rs = pstmt.executeQuery();
             ArrayList<Competitors> competitors = new ArrayList<Competitors>();
