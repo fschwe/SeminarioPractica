@@ -49,7 +49,6 @@ public class PricesView {
     public void inputPrices(Competitors competitor, Users user) {
         ArticlesServices as = new ArticlesServices();
         ArrayList<Articles> articles = as.getBrandsArticle(competitor.getBrands_id());
-
         PricesController pc = new PricesController();
         for (int i = 0; i < articles.size(); i++) {
             Prices inputedPrice = null;

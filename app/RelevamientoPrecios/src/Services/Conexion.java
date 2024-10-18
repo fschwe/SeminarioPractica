@@ -16,7 +16,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class Conexion {
+public abstract class Conexion {
     private String url = "jdbc:mysql://localhost:3306/sp_relev";
     private String user = "root";
     private String password = "root";

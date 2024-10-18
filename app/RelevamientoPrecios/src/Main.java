@@ -23,11 +23,10 @@ public class Main {
         int option = -1;
         System.out.println("Ingrese como usuario 99999997 y password como usuario de prueba");
         user = menu.loginMenu();
-        while (user.getIs_logged_in() && option != 0) {
+        while (user.getIs_logged_in() && option != 0 && user != null) {
             menu.showMenu();
             option = sc.nextInt();
             menu.handleMenu(option);
-
         }
 
     }

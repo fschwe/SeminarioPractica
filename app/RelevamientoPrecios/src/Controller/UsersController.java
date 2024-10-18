@@ -38,17 +38,17 @@ public class UsersController {
         user = us.getUser(username);
         if (user != null) {
             if (user.getPassword().equals(password)) {
-
                 System.out.print("\033[H\033[2J");
                 System.out.flush();
                 System.out.println("Bienvenido " + user.getFirst_name() + " " + user.getLast_name());
                 user.setIs_logged_in(true);
                 return user;
             } else {
-                System.out.println("Contraseña incorrecta");
+                System.out.println("Usuario o contraseña incorrectos");
             }
         } else {
-            System.out.println("Usuario no encontrado");
+            System.out.println("Usuario o contraseña incorrectos");
+            user = null;
         }
         return user;
     }
